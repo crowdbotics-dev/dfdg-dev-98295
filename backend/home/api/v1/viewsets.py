@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Ssf
-from .serializers import SsfSerializer
+from home.models import Fdhd
+from .serializers import FdhdSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -33,7 +33,7 @@ class LoginViewSet(ViewSet):
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
 
-class SsfViewSet(viewsets.ModelViewSet):
-    serializer_class = SsfSerializer
+class FdhdViewSet(viewsets.ModelViewSet):
+    serializer_class = FdhdSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
-    queryset = Ssf.objects.all()
+    queryset = Fdhd.objects.all()

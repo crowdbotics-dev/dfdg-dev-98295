@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ssf
-admin.site.register(Ssf)
+from .models import Fdhd
+admin.site.register(Fdhd)
 
 # Register your models here.
