@@ -6,29 +6,29 @@ const dfdgdevAPI = axios.create({
 function api_docs_schema_retrieve(payload) {
   return dfdgdevAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_fdhd_list(payload) {
+  return dfdgdevAPI.get(`/api/v1/fdhd/`)
+}
+function api_v1_fdhd_create(payload) {
+  return dfdgdevAPI.post(`/api/v1/fdhd/`, payload.data)
+}
+function api_v1_fdhd_retrieve(payload) {
+  return dfdgdevAPI.get(`/api/v1/fdhd/${payload.id}/`)
+}
+function api_v1_fdhd_update(payload) {
+  return dfdgdevAPI.put(`/api/v1/fdhd/${payload.id}/`, payload.data)
+}
+function api_v1_fdhd_partial_update(payload) {
+  return dfdgdevAPI.patch(`/api/v1/fdhd/${payload.id}/`, payload.data)
+}
+function api_v1_fdhd_destroy(payload) {
+  return dfdgdevAPI.delete(`/api/v1/fdhd/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return dfdgdevAPI.post(`/api/v1/login/`, payload.data)
 }
 function api_v1_signup_create(payload) {
   return dfdgdevAPI.post(`/api/v1/signup/`, payload.data)
-}
-function api_v1_ssf_list(payload) {
-  return dfdgdevAPI.get(`/api/v1/ssf/`)
-}
-function api_v1_ssf_create(payload) {
-  return dfdgdevAPI.post(`/api/v1/ssf/`, payload.data)
-}
-function api_v1_ssf_retrieve(payload) {
-  return dfdgdevAPI.get(`/api/v1/ssf/${payload.id}/`)
-}
-function api_v1_ssf_update(payload) {
-  return dfdgdevAPI.put(`/api/v1/ssf/${payload.id}/`, payload.data)
-}
-function api_v1_ssf_partial_update(payload) {
-  return dfdgdevAPI.patch(`/api/v1/ssf/${payload.id}/`, payload.data)
-}
-function api_v1_ssf_destroy(payload) {
-  return dfdgdevAPI.delete(`/api/v1/ssf/${payload.id}/`)
 }
 function rest_auth_login_create(payload) {
   return dfdgdevAPI.post(`/rest-auth/login/`, payload.data)
@@ -65,14 +65,14 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_fdhd_list,
+  api_v1_fdhd_create,
+  api_v1_fdhd_retrieve,
+  api_v1_fdhd_update,
+  api_v1_fdhd_partial_update,
+  api_v1_fdhd_destroy,
   api_v1_login_create,
   api_v1_signup_create,
-  api_v1_ssf_list,
-  api_v1_ssf_create,
-  api_v1_ssf_retrieve,
-  api_v1_ssf_update,
-  api_v1_ssf_partial_update,
-  api_v1_ssf_destroy,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
