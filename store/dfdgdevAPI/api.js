@@ -6,6 +6,24 @@ const dfdgdevAPI = axios.create({
 function api_docs_schema_retrieve(payload) {
   return dfdgdevAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_cvcbb_list(payload) {
+  return dfdgdevAPI.get(`/api/v1/cvcbb/`)
+}
+function api_v1_cvcbb_create(payload) {
+  return dfdgdevAPI.post(`/api/v1/cvcbb/`, payload.data)
+}
+function api_v1_cvcbb_retrieve(payload) {
+  return dfdgdevAPI.get(`/api/v1/cvcbb/${payload.id}/`)
+}
+function api_v1_cvcbb_update(payload) {
+  return dfdgdevAPI.put(`/api/v1/cvcbb/${payload.id}/`, payload.data)
+}
+function api_v1_cvcbb_partial_update(payload) {
+  return dfdgdevAPI.patch(`/api/v1/cvcbb/${payload.id}/`, payload.data)
+}
+function api_v1_cvcbb_destroy(payload) {
+  return dfdgdevAPI.delete(`/api/v1/cvcbb/${payload.id}/`)
+}
 function api_v1_fdhd_list(payload) {
   return dfdgdevAPI.get(`/api/v1/fdhd/`)
 }
@@ -65,6 +83,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_cvcbb_list,
+  api_v1_cvcbb_create,
+  api_v1_cvcbb_retrieve,
+  api_v1_cvcbb_update,
+  api_v1_cvcbb_partial_update,
+  api_v1_cvcbb_destroy,
   api_v1_fdhd_list,
   api_v1_fdhd_create,
   api_v1_fdhd_retrieve,
