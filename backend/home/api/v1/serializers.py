@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Fdhd
+from home.models import Cvcbb,Fdhd
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -80,4 +80,10 @@ class FdhdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Fdhd
+        fields = "__all__"
+
+class CvcbbSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Cvcbb
         fields = "__all__"

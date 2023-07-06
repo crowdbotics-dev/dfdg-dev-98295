@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Fdhd
-from .serializers import FdhdSerializer
+from home.models import Cvcbb,Fdhd
+from .serializers import CvcbbSerializer,FdhdSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class FdhdViewSet(viewsets.ModelViewSet):
     serializer_class = FdhdSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Fdhd.objects.all()
+
+class CvcbbViewSet(viewsets.ModelViewSet):
+    serializer_class = CvcbbSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Cvcbb.objects.all()
